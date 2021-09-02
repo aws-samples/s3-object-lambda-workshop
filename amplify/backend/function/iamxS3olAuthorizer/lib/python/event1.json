@@ -1,0 +1,42 @@
+{
+  "xAmzRequestId": "1147acb3-64fe-460e-8e86-fc57834850eb",
+  "getObjectContext": {
+    "inputS3Url": "https://s3-ap-workshop-111111111111.s3-accesspoint.us-east-2.amazonaws.com/dataset.csv?X-Amz-Security-Token=FwoGZXIvYXdzEBYaDDob0by7xMjAZ8VpLCKBBQOdwj1ZAvg90LwCQtZpfYJ0GXCehTpfmauTASXt1O%2FdI38nXS%2FL75CGt5aQ1DCV8mjgcFpwjIpb30BhGTwLTcZBglX3kJHAEZuAEw7vbYriapcrVpJ3XlF%2Fsj4WSre1zvzmIPyJ1k%2BlLfh1AH2RY59k%2F0%2BpmVObRUJyXQG0ro48WVijBwpKRSDvkNzGvdf275nvYLHz91STDaoe9QLb2sC7oeA01qG%2BZGAPFEUytGkKlMjP6pH8V0NAvpde%2FOAo0wyZxAJ3OklazIwJQzmvt1hYTg4O3m2%2B3QKtZ8GvuJxfc2S2VkLUPC2SJbocItDTLe3e9SCxFVsbO4F5awBFO%2BiUdV0vbd19k7SnOupxHnXymd3euGHs9rG25RuBj2%2Bg%2FqaSKz8%2Bcpdw6qvOwWQ4doIG81gUh%2FjTkqWifC%2F3N%2FVJBBCWpVdYZHLp8cDJyLrr37V0pnHbcWmWxWTrwhwNBlJp%2FQYwrzYTPpCW0Zr2BipO2IhFEkWzi60ymj0xrJ%2FpHZGLeYWNz7IPJDBAS6IV0dPKMXkCDOUljIBSsy4ow%2BsmKrdtxt0OkygeSTWhJxUavluJtc8He%2Fk3bQp3w1d%2FNKeJr74fH7kZDxL9kzsHKixdo%2F4zdZ4IsKvIrWRqsmhLosAjCW8wvCdSaXy%2FCrf6548Nz5IJsKDYLLeOG%2BZbjrBLxr6eUZmOeaYm6QnhyEzED8c2MFWqh%2BgMppVB7qzxJVsc4q8hE0tyW%2BqVfoZq9coxZVHtSRwNjYbF9mBUTq%2FoiykFUKqW%2BtQZHEp3CyHAqAEYyZ3UgdPEbQadfULIeY5bY03RjNIdS7lgPmnL2a9%2FNcUR9LWsvMikh6JnvMxUik4iKJmSpYgGMvoB3XMzlueLp61xP1j%2Ffu7VeAAXTSJ5TzL%2FhslVELFsRQgTVm1uiRGBMF0eU6nYjD5O36qYqw97D6AnwxsksE17LzClbNSrQFn5lZJQaXs1q4GRLqlLss2YVv0UdBR7R6BhVls2x6CCBs5rHXjZlF0nvRf4LiaR5z%2F9jZ6s5HYok6tAKdwNa5R1Gno%2FtYuYOYYB2J62L5kWm4zcyJiIcWqUaIFwA2LqxcWDGxfOJqk9GvsqAsq8LvluGUB9hllFBLop4QBV9h%2BHWRDm333viOt2WGuuanqrBXJIUmA7igg37AUTXdJ3hYZDw1toyFDGrKWbORVbKjk1AbCZCA%3D%3D%7CMy4xNy43NC4xNjM%3D&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20210803T202306Z&X-Amz-SignedHeaders=host&X-Amz-Expires=61&X-Amz-Credential=ASIAIYDIKUBGO6M75IQQ%2F20210803%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Signature=231c39cae996919f3eb83eced84a185993d0a1dc4f5c76cb29bf80be7fb46b7b",
+    "outputRoute": "io-cell001",
+    "outputToken": "AgV49IIbZroUAQ/vf0upqi3QSguNV/JiIxDQY2VPtk63NfkAXwABABVhd3MtY3J5cHRvLXB1YmxpYy1rZXkAREFpQWlERTlVSHFBZG1JOUFwOW9aTUtUaWlIY3hPRmJHWGExTmlIQzVmbUdSNjZvMlZDTWdneStabXpHNGZQV2dTUT09AAEAB2F3cy1rbXMAS2Fybjphd3M6a21zOnVzLWVhc3QtMjo0MDAwMDg1OTAxMjg6a2V5L2I4MjQ1MzQyLThkOTgtNGIxOC1iNzg0LTNiNTQzNjRiMWYyMAC4AQIBAHirr0ph+R/EdqV60EGZEa3YqFlCPM0QIfChd5nxOnaf7wGjZNsyfudp524dtndd8qVrAAAAfjB8BgkqhkiG9w0BBwagbzBtAgEAMGgGCSqGSIb3DQEHATAeBglghkgBZQMEAS4wEQQMe/1GHeR10xUIwvDaAgEQgDuDu8HJqAqy0CbWI0weZ4TmDmGqT39pvOcodRraRPQDtz1WCxUUUbXv9MpdNml81npGkhZSwyrpqEG82gIAABAAf46+dSVNN2z5GCth5Qi2rPUWcRRujoUhQcpt7GvuXcd7VV1hBqa7HojkINMteEzo/////wAAAAEAAAAAAAAAAAAAAAEAAADND9zTontdzwJ7/MSlBNvcq1V95VqK6v/itNqXfayuKOQ5lNMDZRKeOKRbatkUPI0C4+GgPNf4HCxZR9w/rQW1dTxszjBhbrDl4qN8e0Yh63EP7o41romHVkxsblmOFds4Q+uvMXTuCcvzr2cTFsSF9WFHTA2Tpq2ErNmRpu+kpgKOBSiW8LDSPYzT3+4ayL39nFjtOU4QdiZgBko66z1OkGyUqltiPf6Rm/P9JH9uLmPbcopEK42pvAVKth4GOHCa0ixDpyZ4wSm2EUj06QtU/e09occEhuh/s+amo9kAZzBlAjBb4XPyOw656mqQYRmUfV0s4jfMAsdNW/Qu+8aJSC4eePmqC6+NLTBAl86eik1Xo0cCMQCrvlm2ljnoBjk4oiw/ZS0uU8f8TIxtsEXJOlDczilaGxbbebsv8UcW4qHdhgjh/YE="
+  },
+  "configuration": {
+    "accessPointArn": "arn:aws:s3-object-lambda:us-east-2:111111111111:accesspoint/s3-ol-workshop",
+    "supportingAccessPointArn": "arn:aws:s3:us-east-2:111111111111:accesspoint/s3-ap-workshop",
+    "payload": ""
+  },
+  "userRequest": {
+    "url": "https://s3-ol-workshop-111111111111.s3-object-lambda.us-east-2.amazonaws.com/dataset.csv",
+    "headers": {
+      "Host": "s3-ol-workshop-111111111111.s3-object-lambda.us-east-2.amazonaws.com",
+      "Accept-Encoding": "identity",
+      "X-Amz-Content-SHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  "userIdentity": {
+    "type": "AssumedRole",
+    "principalId": "AROAROE6DPB6EJ5JSVOTX:koiker",
+    "arn": "arn:aws:sts::111111111111:assumed-role/AWSReservedSSO_AdministratorAccess_ad8e2057387984b1/koiker",
+    "accountId": "111111111111",
+    "accessKeyId": "ASIAROE6DPB6LNUKZGPC",
+    "sessionContext": {
+      "attributes": {
+        "mfaAuthenticated": "false",
+        "creationDate": "Tue Aug 03 13:48:09 UTC 2021"
+      },
+      "sessionIssuer": {
+        "type": "Role",
+        "principalId": "AROAROE6DPB6EJ5JSVOTX",
+        "arn": "arn:aws:iam::111111111111:role/aws-reserved/sso.amazonaws.com/us-east-2/AWSReservedSSO_AdministratorAccess_ad8e2057387984b1",
+        "accountId": "111111111111",
+        "userName": "AWSReservedSSO_AdministratorAccess_ad8e2057387984b1"
+      }
+    }
+  },
+  "protocolVersion": "1.00"
+}

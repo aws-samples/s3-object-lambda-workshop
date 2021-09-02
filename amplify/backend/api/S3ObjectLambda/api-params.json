@@ -1,0 +1,42 @@
+{
+  "paths": [
+    {
+      "name": "/policy",
+      "lambdaFunction": "iamX",
+      "privacy": {
+        "private": true,
+        "auth": [
+          "/POST",
+          "/GET",
+          "/PUT",
+          "/PATCH",
+          "/DELETE"
+        ]
+      },
+      "policyResourceName": "/policy"
+    }
+  ],
+  "resourceName": "S3ObjectLambda",
+  "apiName": "S3ObjectLambda",
+  "functionArns": [
+    {
+      "lambdaFunction": "iamX"
+    }
+  ],
+  "privacy": {
+    "auth": 1,
+    "unauth": 0,
+    "authRoleName": "amplify-iamx-dev-22828-authRole",
+    "unAuthRoleName": "amplify-iamx-dev-22828-unauthRole"
+  },
+  "dependsOn": [
+    {
+      "category": "function",
+      "resourceName": "iamX",
+      "attributes": [
+        "Name",
+        "Arn"
+      ]
+    }
+  ]
+}

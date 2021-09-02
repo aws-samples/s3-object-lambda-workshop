@@ -1,0 +1,29 @@
+{
+  "xAmzRequestId": "4e287156-c434-4f26-b0f5-c2e22ba81d1d",
+  "getObjectContext": {
+    "inputS3Url": "https://ap-upload-us-east-2-111111111111.s3-accesspoint.us-east-2.amazonaws.com/dataset.csv?X-Amz-Security-Token=FwoGZXIvYXdzECcaDN4ZwZUBoktrAHkaqiLKAp241EVJKVPoBbClH2gtnjLgmbgG6ZyU49MlfNf%2FvQTRV%2FZkStfGg8WlSTMLrIRCbXX5873r6v8npKTLN%2FXN36tO4hEpej3i1NWaR7ttHf2JD0kBY%2BUHv04whcoSvLnz6M4gGx1wYAYdUkNBMOLwK09MEw39z%2BXlJLRIkXe0S4VudrfCUApgC6s3GiXEqva1F22qXPtc3%2FsZIq4%2F96S%2BFz%2FcT7%2BBo3czkK2Qmo1%2FVqjcC8a9EAy88f0xYNuABteziF9w9zaISwXeINuX1bROPv7kOa%2BrNL6HzIPgD6bzFh7isCYMq1PxpYx1xGMFXtmRFiMzmzD2z4ajf1rBhrmy2ytMw0nZKQc2QO5RUZcAXiMwb0i%2BNwqRAWOmcWhczJLAK7KjFSa89%2BpRFyFfGeukhQo2R4i8CB2mJya0wdSzW0TZgUwbeFO9iOV4dSiEq6qIBjJ6r5cSD04%2BPekVVmlnkvCGIDrlsPI9WuGWAK%2B6O8bjYSKWCEED%2Bam7Ba08Qqtbl%2F6okaxPQQjYqyg5q2PJckxjgND53%2BK8K3tjptSnbP1gDa72MA2JihkDy9Sn3WXN%2BO%2F6%2B6O8xQAJRfQy2a06bRkj8udHOZ0zp6S%2Byho%3D%7CNTIuOTUuNC4yMQ%3D%3D&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20210804T132628Z&X-Amz-SignedHeaders=host&X-Amz-Expires=61&X-Amz-Credential=ASIAIX2CWSK2VIU4E2IQ%2F20210804%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Signature=e9f1d56c8de8cdfa15f4542666147c80bd729e2d1391b1084d220af91b6c6e86",
+    "outputRoute": "io-cell001",
+    "outputToken": "AgV432Dw7dLGwnOFNHYSzk0S5df1MG1HgomhyDKRiaHHDkMAXwABABVhd3MtY3J5cHRvLXB1YmxpYy1rZXkAREFrc3k2amFmMUpTMmsvWENBcnpJbWFjMFR6ZFp2MmE3aWlqbG9tYVNXWjY3Ykp1YXd4cmtrL0R3dmV5eFI1WnJiQT09AAEAB2F3cy1rbXMAS2Fybjphd3M6a21zOnVzLWVhc3QtMjo0MDAwMDg1OTAxMjg6a2V5L2I4MjQ1MzQyLThkOTgtNGIxOC1iNzg0LTNiNTQzNjRiMWYyMAC4AQIBAHirr0ph+R/EdqV60EGZEa3YqFlCPM0QIfChd5nxOnaf7wHHpOb9mvgAAk9/1q2BGqQaAAAAfjB8BgkqhkiG9w0BBwagbzBtAgEAMGgGCSqGSIb3DQEHATAeBglghkgBZQMEAS4wEQQMgmAZNIddDQVEG2I1AgEQgDuyg5iXCvvlqnzEcbkKuElagWwuar7s/i1ZROhnoVXZdt8jo2rUyiGZOs4CjnqR7SN7+AbIIa9eLkw59gIAABAAQOgXwI7j22BCKj9kvJEAaemSgNfZYcRjc8Qrig4kk3R+Bsn/430XTP57+ZYcz5pj/////wAAAAEAAAAAAAAAAAAAAAEAAADNiLVsC+ItGCpZJEjHWBejyCDKqOaPga0SP/YAq9IChipQwGOlvOXQecYxxdapjOE2gTNHq76Uet2JIkPWvO2A3Qcg0b0mSjdA8QBJakutSgrI2xxfeTo8gdwcLosnWhYqYqv50XdRYAhrxvAmHJoBTXS+dm7XIg/aXv21Yo/hHtLqoJI/y/o5OUPD2XIzlujmV+0/TbI3dQb+YTo2nWOBO3EMNlK97Ia+8cyCJUjrrnvbzJ1rHvaP9eLLdYiK2XTgRlk6qIJD6MSeRbdm7F6o2jjwKYBYQNf+uMxADA0AZzBlAjEAtpRbPm/tfCbsn/+qmneO0WCjOe7LdM7eCQKdGaCGC/YKtuujTOGvLh1n/juEoh/fAjAMKMRhdwgQJMqLtha4psPMermpIlpwma7IAxWIJo/CZfR9M06lpdFHvsxnT0L8Qh8="
+  },
+  "configuration": {
+    "accessPointArn": "arn:aws:s3-object-lambda:us-east-2:111111111111:accesspoint/s3-ol-workshop",
+    "supportingAccessPointArn": "arn:aws:s3:us-east-2:111111111111:accesspoint/ap-upload-us-east-2",
+    "payload": ""
+  },
+  "userRequest": {
+    "url": "https://s3-ol-workshop-111111111111.s3-object-lambda.us-east-2.amazonaws.com/dataset.csv",
+    "headers": {
+      "Host": "s3-ol-workshop-111111111111.s3-object-lambda.us-east-2.amazonaws.com",
+      "Accept-Encoding": "identity",
+      "X-Amz-Content-SHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  "userIdentity": {
+    "type": "IAMUser",
+    "principalId": "AIDAI7F2UNFWYGROHFAV6",
+    "arn": "arn:aws:iam::111111111111:user/koike",
+    "accountId": "111111111111",
+    "accessKeyId": "AKIARAAAAAAAAAAR6AAA"
+  },
+  "protocolVersion": "1.00"
+}

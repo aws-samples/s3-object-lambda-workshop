@@ -1,0 +1,7 @@
+{
+    "tableName": "s3policy",
+    "partitionKeyName": "id",
+    "partitionKeyType": "S",
+    "sortKeyName": "policy_name",
+    "sortKeyType": "S"
+}
