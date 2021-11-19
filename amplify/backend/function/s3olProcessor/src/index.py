@@ -11,7 +11,7 @@ from ol_authorizer import validate_request
 _THIS_MODULE = sys.modules[__name__]
 logger = logging.getLogger('IAM-X_Authorizer')
 logger.addHandler(logging.StreamHandler())
-logger.setLevel(getattr(logging, os.getenv('LOG_LEVEL', 'INFO')))
+logger.setLevel(getattr(logging, os.getenv('LOG_LEVEL', 'INFO'),'INFO'))
 s3 = boto3.client('s3')
 
 
