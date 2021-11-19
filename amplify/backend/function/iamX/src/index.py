@@ -29,7 +29,7 @@ from pydantic import ValidationError
 from typing import Optional, Union
 
 logger = logging.getLogger('IAM-X')
-logger.setLevel(getattr(logging, os.getenv('LOG_LEVEL', 'INFO')))
+logger.setLevel(getattr(logging, os.getenv('LOG_LEVEL', 'INFO'),'INFO'))
 dynamodb = boto3.resource('dynamodb')
 ENV = os.getenv('ENV')
 TABLE_NAME = 's3policy'
