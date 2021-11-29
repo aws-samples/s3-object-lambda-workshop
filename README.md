@@ -1,7 +1,7 @@
 # S3 Object Lambda Workshop
 
 **Description**:  This project is part of the AWS S3 Object Lambda Workshop.
-The details on how to install and run this solution is described in the workshop: [https://s3-object-lambda.workshop.aws/](https://s3-object-lambda.workshop.aws/)
+The details on how to install and run this solution is described in the workshop: [link here](https://catalog.us-east-1.prod.workshops.aws/v2/workshops/a02f594e-0618-4e6f-ba55-9355a12e0378/en-US/)
 
 - **Technology stack**: AWS Amplify
 - **Status**:  1.0
@@ -17,7 +17,7 @@ For the purpose of the workshop capabilities demonstration, the current version 
 
 ## Installation
 
-To get the detailed instructions on how to install the solution can be found at: [https://s3-object-lambda.workshop.aws/](https://s3-object-lambda.workshop.aws/)
+To get the detailed instructions on how to install the solution can be found [here](https://catalog.us-east-1.prod.workshops.aws/v2/workshops/a02f594e-0618-4e6f-ba55-9355a12e0378/en-US/)
 
 ## Getting help
 
