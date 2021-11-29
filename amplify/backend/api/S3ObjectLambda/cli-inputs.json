@@ -1,0 +1,18 @@
+{
+  "version": 1,
+  "paths": {
+    "/policy": {
+      "name": "/policy",
+      "lambdaFunction": "iamX",
+      "permissions": {
+        "setting": "private",
+        "auth": [
+          "create",
+          "read",
+          "update",
+          "delete"
+        ]
+      }
+    }
+  }
+}
