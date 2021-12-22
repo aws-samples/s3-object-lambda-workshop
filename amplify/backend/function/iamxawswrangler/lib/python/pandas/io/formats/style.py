@@ -2588,7 +2588,7 @@ class Styler(StylerRenderer):
         # error: Variable "cls" is not valid as a type
         # error: Invalid base class "cls"
         class MyStyler(cls):  # type:ignore[valid-type,misc]
-            env = jinja2.Environment(loader=loader)
+            env = jinja2.Environment(loader=loader, autoescape=jinja2.select_autoescape())
             if html_table:
                 template_html_table = env.get_template(html_table)
             if html_style:
