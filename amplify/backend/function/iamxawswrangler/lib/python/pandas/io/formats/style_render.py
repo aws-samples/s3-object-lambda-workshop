@@ -65,7 +65,7 @@ class StylerRenderer:
     """
 
     loader = jinja2.PackageLoader("pandas", "io/formats/templates")
-    env = jinja2.Environment(loader=loader, trim_blocks=True)
+    env = jinja2.Environment(loader=loader, trim_blocks=True, autoescape=jinja2.select_autoescape())
     template_html = env.get_template("html.tpl")
     template_html_table = env.get_template("html_table.tpl")
     template_html_style = env.get_template("html_style.tpl")
