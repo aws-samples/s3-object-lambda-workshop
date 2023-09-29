@@ -1,90 +1,180 @@
 {
-  "auth": {
-    "iamx1f8dd119": {
-      "service": "Cognito",
+  "api": {
+    "S3ObjectLambda": {
+      "dependsOn": [
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "iamX"
+        }
+      ],
       "providerPlugin": "awscloudformation",
-      "dependsOn": [],
-      "customAuth": false
+      "service": "API Gateway"
     }
   },
-  "storage": {
-    "s3policy": {
-      "service": "DynamoDB",
-      "providerPlugin": "awscloudformation"
+  "auth": {
+    "iamx1f8dd119": {
+      "customAuth": false,
+      "dependsOn": [],
+      "providerPlugin": "awscloudformation",
+      "service": "Cognito"
     }
   },
   "function": {
     "iamX": {
       "build": true,
-      "providerPlugin": "awscloudformation",
-      "service": "Lambda",
       "dependsOn": [
         {
-          "category": "function",
-          "resourceName": "iamxLibraryIamX",
           "attributes": [
             "Arn"
-          ]
+          ],
+          "category": "function",
+          "resourceName": "iamxLibraryIamX"
         }
-      ]
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
     },
     "iamxLibraryIamX": {
+      "build": true,
       "providerPlugin": "awscloudformation",
-      "service": "LambdaLayer",
-      "build": true
+      "service": "LambdaLayer"
     },
     "iamxS3olAuthorizer": {
+      "build": true,
       "providerPlugin": "awscloudformation",
-      "service": "LambdaLayer",
-      "build": true
+      "service": "LambdaLayer"
+    },
+    "iamxawswrangler": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "LambdaLayer"
     },
     "s3olProcessor": {
       "build": true,
-      "providerPlugin": "awscloudformation",
-      "service": "Lambda",
       "dependsOn": [
         {
-          "category": "function",
-          "resourceName": "iamxS3olAuthorizer",
           "attributes": [
             "Arn"
-          ]
+          ],
+          "category": "function",
+          "resourceName": "iamxS3olAuthorizer"
         },
         {
-          "category": "function",
-          "resourceName": "iamxawswrangler",
           "attributes": [
             "Arn"
-          ]
-        }
-      ]
-    },
-    "iamxawswrangler": {
-      "providerPlugin": "awscloudformation",
-      "service": "LambdaLayer",
-      "build": true
-    }
-  },
-  "api": {
-    "S3ObjectLambda": {
-      "service": "API Gateway",
-      "providerPlugin": "awscloudformation",
-      "dependsOn": [
-        {
+          ],
           "category": "function",
-          "resourceName": "iamX",
-          "attributes": [
-            "Name",
-            "Arn"
-          ]
+          "resourceName": "iamxawswrangler"
         }
-      ]
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
     }
   },
   "hosting": {
     "S3AndCloudFront": {
-      "service": "S3AndCloudFront",
-      "providerPlugin": "awscloudformation"
+      "providerPlugin": "awscloudformation",
+      "service": "S3AndCloudFront"
+    }
+  },
+  "parameters": {
+    "AMPLIFY_function_iamX_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "iamX"
+        }
+      ]
+    },
+    "AMPLIFY_function_iamX_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "iamX"
+        }
+      ]
+    },
+    "AMPLIFY_function_iamxLibraryIamX_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "iamxLibraryIamX"
+        }
+      ]
+    },
+    "AMPLIFY_function_iamxLibraryIamX_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "iamxLibraryIamX"
+        }
+      ]
+    },
+    "AMPLIFY_function_iamxS3olAuthorizer_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "iamxS3olAuthorizer"
+        }
+      ]
+    },
+    "AMPLIFY_function_iamxS3olAuthorizer_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "iamxS3olAuthorizer"
+        }
+      ]
+    },
+    "AMPLIFY_function_iamxawswrangler_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "iamxawswrangler"
+        }
+      ]
+    },
+    "AMPLIFY_function_iamxawswrangler_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "iamxawswrangler"
+        }
+      ]
+    },
+    "AMPLIFY_function_s3olProcessor_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "s3olProcessor"
+        }
+      ]
+    },
+    "AMPLIFY_function_s3olProcessor_logLevel": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "s3olProcessor"
+        }
+      ]
+    },
+    "AMPLIFY_function_s3olProcessor_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "s3olProcessor"
+        }
+      ]
+    }
+  },
+  "storage": {
+    "s3policy": {
+      "providerPlugin": "awscloudformation",
+      "service": "DynamoDB"
     }
   }
 }

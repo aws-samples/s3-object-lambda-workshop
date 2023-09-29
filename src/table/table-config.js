@@ -15,7 +15,6 @@
 //
 //     Author: Rafael M. Koike - koiker@amazon.com
 import * as React from 'react';
-// import { Link } from '@awsui/components-react';
 import { Link } from 'react-router-dom';
 
 export function getMatchesCountText(count) {
@@ -64,7 +63,7 @@ export const columnDefinitions = [
         sortingComparator: (a, b) => a.creation_date.valueOf() - b.creation_date.valueOf()
     },
     {
-        id: 'lastModifield',
+        id: 'lastModified',
         header: 'Last modified',
         cell: item => formatDate(item.last_modified),
         ariaLabel: createLabelFunction('Last modified'),

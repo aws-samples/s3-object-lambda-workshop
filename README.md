@@ -4,7 +4,7 @@
 The details on how to install and run this solution is described in the workshop: [link here](https://catalog.us-east-1.prod.workshops.aws/v2/workshops/a02f594e-0618-4e6f-ba55-9355a12e0378/en-US/)
 
 - **Technology stack**: AWS Amplify
-- **Status**:  1.0
+- **Status**:  1.1
 - This solution is a demonstration of the capabilities of S3 Object Lambda  with other AWS services to create a flexible authorization mechanism
 
 

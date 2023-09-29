@@ -15,22 +15,29 @@
 //
 //     Author: Rafael M. Koike - koiker@amazon.com
 import React, {useState} from 'react';
-import {useCollection} from '@awsui/collection-hooks';
-import {useHistory} from 'react-router-dom';
+import {useCollection} from '@cloudscape-design/collection-hooks';
+import {useNavigate} from 'react-router-dom';
 import {
+    Alert,
     Box,
     Button,
     ButtonDropdown,
     CollectionPreferences,
     Header,
+    Link,
     Modal,
     Pagination,
     Table,
     TextFilter,
     SpaceBetween,
-} from '@awsui/components-react';
+} from '@cloudscape-design/components';
 import {API} from 'aws-amplify';
 import {columnDefinitions, getMatchesCountText, paginationLabels, collectionPreferencesProps} from './table-config';
+import {Amplify} from 'aws-amplify';
+import awsconfig from '../aws-exports';
+
+Amplify.configure(awsconfig);
+
 
 function EmptyState({title, subtitle, action}) {
     return (
@@ -46,13 +53,67 @@ function EmptyState({title, subtitle, action}) {
     );
 }
 
-export default function S3ObjectLambdaTable() {
-    let history = useHistory();
-    const [visibleModal, setVisibleModal] = React.useState(false);
-    const [modalTitle, setModalTitle] = React.useState('Delete policy');
-    const [modalDesc, setModalDesc] = React.useState('Confirm the deletion of policy?')
-    const [allItems, setAllItems] = React.useState([]);
-    const [loadingState, setLoadingState] = React.useState(true)
+function DeleteModal({policies, visible, onDiscard, onDelete}) {
+    const isMultiple = policies.length > 1;
+    return (
+        <Modal
+            visible={visible}
+            onDismiss={onDiscard}
+            header={isMultiple ? 'Delete policies' : 'Delete policy'}
+            closeAriaLabel="Close dialog"
+            footer={
+                <Box float="right">
+                    <SpaceBetween direction="horizontal" size="xs">
+                        <Button variant="link" onClick={onDiscard}>
+                            Cancel
+                        </Button>
+                        <Button variant="primary" onClick={onDelete} data-testid="submit">
+                            Delete
+                        </Button>
+                    </SpaceBetween>
+                </Box>
+            }
+        >
+            {policies.length > 0 && (
+                <SpaceBetween size="m">
+                    {isMultiple ? (
+                        <Box variant="span">
+                            Permanently delete{' '}
+                            <Box variant="span" fontWeight="bold">
+                                {policies.length} distributions
+                            </Box>
+                            ? You can’t undo this action.
+                        </Box>
+                    ) : (
+                        <Box variant="span">
+                            Permanently delete policy{' '}
+                            <Box variant="span" fontWeight="bold">
+                                {policies[0].policy_name}
+                            </Box>
+                            ? You can’t undo this action.
+                        </Box>
+                    )}
+
+                    <Alert statusIconAriaLabel="Info">
+                        Proceeding with this action will delete the
+                        {isMultiple ? ' policies with all their content ' : ' policy with all its content'} and can
+                        affect related resources.{' '}
+                        <Link external={true} href="#" ariaLabel="Learn more about polic management, opens in new tab">
+                            Learn more
+                        </Link>
+                    </Alert>
+                </SpaceBetween>
+            )}
+        </Modal>
+    );
+}
+
+
+export default function PolicyTable({setNotifications}) {
+    let history = useNavigate();
+    const [showDeleteModal, setShowDeleteModal] = useState(false);
+    const [allItems, setAllItems] = useState([]);
+    const [loadingState, setLoadingState] = useState(true)
     const [preferences, setPreferences] = useState({
         pageSize: 10,
         visibleContent: ['name', 'description', 'lastModified']
@@ -81,6 +142,8 @@ export default function S3ObjectLambdaTable() {
             selection: {}
         }
     );
+    const {selectedItems} = collectionProps;
+
 
     async function getData() {
         try {
@@ -97,22 +160,20 @@ export default function S3ObjectLambdaTable() {
         getData().then(r => console.log('Table refresh ' + r));
     }, []);
 
-    const {selectedItems} = collectionProps;
+
 
     function CreatePolicy() {
-        history.push('/create');
+        history('/create');
     }
 
     function EditPolicy(id, policy_name) {
-        history.push(`/edit/${id}?policy_name=${policy_name}`);
+        history(`/edit/${id}?policy_name=${policy_name}`);
     }
 
     function onItemClick(item){
         if (item.detail.id === 'remove'){
-            console.log(selectedItems[0].id);
-            setModalTitle('Delete IAM-X policy');
-            setModalDesc(`Confirm the delete of policy: ${selectedItems[0].policy_name}?`);
-            setVisibleModal(true);
+            console.log("Opening Modal - Delete policy: " + selectedItems[0].id);
+            setShowDeleteModal(true);
         }else if (item.detail.id === 'edit'){
             if(selectedItems[0].id){
                 EditPolicy(selectedItems[0].id, selectedItems[0].policy_name);
@@ -123,13 +184,8 @@ export default function S3ObjectLambdaTable() {
         }
     }
 
-    function onModalCancel(){
-        setVisibleModal(false);
-    }
-
     async function onModalDelete(){
         console.log('Deleting: ' + selectedItems[0].id);
-        setVisibleModal(false);
         try {
             const response = await API.del('S3ObjectLambda', '/policy', {
                 'queryStringParameters': {
@@ -142,28 +198,26 @@ export default function S3ObjectLambdaTable() {
         } catch (e) {
             console.log(JSON.stringify(e.response.data));
         }
+        setNotifications(notifications => [{
+            type: "success",
+            dismissible: true,
+            dismissLabel: "Dismiss message",
+            content: "Successfully deleted policy ",
+            id: "message_6",
+            onDismiss: () =>
+                setNotifications(items =>
+                    items.filter(item => item.id !== "message_6")
+                )
+            },
+            ...notifications,]
+        );
+        setShowDeleteModal(false);
     }
 
     return (
-        <div>
-            <Modal
-                onDismiss={() => setVisibleModal(false)}
-                visible={visibleModal}
-                closeAriaLabel="Close modal"
-                size="medium"
-                footer={
-                    <Box float="right">
-                        <SpaceBetween direction="horizontal" size="xs">
-                            <Button variant="link" onClick={onModalCancel}>Cancel</Button>
-                            <Button variant="primary" onClick={onModalDelete}>Delete</Button>
-                        </SpaceBetween>
-                    </Box>
-                }
-                header={modalTitle}
-            >
-                {modalDesc}
-            </Modal>
+        <>
             <Table
+                variant="full-page"
                 {...collectionProps}
                 selectionType="single"
                 loading={loadingState}
@@ -213,6 +267,12 @@ export default function S3ObjectLambdaTable() {
                     />
                 }
             />
-        </div>
+            <DeleteModal
+                policies={selectedItems}
+                visible={showDeleteModal}
+                onDelete={onModalDelete}
+                onDiscard={() => setShowDeleteModal(false)}
+            />
+        </>
     );
 }

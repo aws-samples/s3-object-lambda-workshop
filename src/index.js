@@ -15,17 +15,15 @@
 //
 //     Author: Rafael M. Koike - koiker@amazon.com
 import React from "react";
-import ReactDOM from "react-dom";
-import { HashRouter } from 'react-router-dom';
+import {createRoot} from 'react-dom/client';
+import {HashRouter} from 'react-router-dom';
+import "@cloudscape-design/global-styles/index.css";
 import App from "./App";
-import "@awsui/global-styles/index.css";
-import Amplify from "aws-amplify";
-import awsExports from "./aws-exports";
-Amplify.configure(awsExports);
 
-ReactDOM.render(
-    <HashRouter>
-        <App />
-    </HashRouter>,
-    document.getElementById("app")
+
+const container = document.getElementById('root');
+const root = createRoot(container); // createRoot(container!) if you use TypeScript
+root.render(<HashRouter>
+        <App/>
+    </HashRouter>
 );
