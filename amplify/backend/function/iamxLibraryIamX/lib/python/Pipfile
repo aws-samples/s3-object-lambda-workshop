@@ -6,7 +6,7 @@ verify_ssl = true
 [dev-packages]
 
 [packages]
-pydantic = "~=1.8.2"
+pydantic = "~=1.10.13"
 
 [requires]
 python_version = "3.8"
